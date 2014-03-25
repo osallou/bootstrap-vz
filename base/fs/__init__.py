@@ -13,6 +13,7 @@ def load_volume(data, bootloader):
 	from providers.ec2.ebsvolume import EBSVolume
 	from common.fs.virtualdiskimage import VirtualDiskImage
 	from common.fs.virtualmachinedisk import VirtualMachineDisk
+    from common.fs.virtualharddisk import VirtualHardDisk
 	# Create a mapping between valid partition maps in the manifest and their corresponding classes
 	from partitionmaps.gpt import GPTPartitionMap
 	from partitionmaps.msdos import MSDOSPartitionMap
@@ -28,7 +29,8 @@ def load_volume(data, bootloader):
 	                   's3':  LoopbackVolume,
 	                   'vdi': VirtualDiskImage,
 	                   'vmdk': VirtualMachineDisk,
-	                   'ebs': EBSVolume
+	                   'ebs': EBSVolume,
+                       'vhd': VirtualHardDisk
 	                   }
 	 # Create the volume with the partition map as an argument
 	return volume_backings.get(data['backing'])(partition_map)
