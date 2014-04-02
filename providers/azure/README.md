@@ -11,6 +11,9 @@ Needs nbd module loaded:
 
     modprobe nbd max_part=3
 
+qemu-img >= 1.7.0 required to convert raw image to vhd fixed size disk.
+This release is available in wheezy-backports.
+
 
 Virtio
 ======
