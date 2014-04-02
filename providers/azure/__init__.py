@@ -1,4 +1,6 @@
 import tasks.packages
+import tasks.boot
+import tasks.image
 from common.tasks import volume
 from common.tasks import loopback
 from common.tasks import partitioning
@@ -45,10 +47,12 @@ def resolve_tasks(tasklist, manifest):
 	                 network.RemoveHostname,
 	                 initd.AddSSHKeyGeneration,
 	                 initd.InstallInitScripts,
+	                 tasks.packages.Waagent,
+			 tasks.boot.ConfigureGrub,
 	                 cleanup.ClearMOTD,
 	                 cleanup.CleanTMP,
 
-	                 loopback.MoveImage,
+			 image.ConvertToVhd
 	                 ])
 
 	if manifest.bootstrapper.get('tarball', False):

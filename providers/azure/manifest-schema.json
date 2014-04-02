@@ -17,7 +17,7 @@
 			"properties": {
 				"backing": {
 					"type": "string",
-					"enum": ["raw"]
+					"enum": ["raw", "vhd"]
 				},
 				"partitions": {
 					"type": "object",

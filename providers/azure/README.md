@@ -4,6 +4,13 @@ KVM provider
 This provider generates raw images for KVM.
 It also supports an optional virtio integration.
 
+Setup
+=====
+
+Needs nbd module loaded:
+
+    modprobe nbd max_part=3
+
 
 Virtio
 ======
