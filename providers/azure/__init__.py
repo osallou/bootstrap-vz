@@ -52,7 +52,7 @@ def resolve_tasks(tasklist, manifest):
 	                 cleanup.ClearMOTD,
 	                 cleanup.CleanTMP,
 
-			 image.ConvertToVhd
+			 tasks.image.ConvertToVhd
 	                 ])
 
 	if manifest.bootstrapper.get('tarball', False):
