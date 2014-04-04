@@ -1,7 +1,8 @@
 {
-	"provider": "virtualbox",
+	"provider": "azure",
 	"bootstrapper": {
-		"workspace":      "/target"
+		"workspace":      "/target",
+		"mirror": "http://ftp.fr.debian.org/debian/"
 		// "guest_additions": "/root/images/VBoxGuestAdditions.iso"
 	},
 	"image": {
@@ -16,9 +17,10 @@
 		"locale":       "en_US",
 		"charmap":      "UTF-8"
 	},
-	"packages": {},
+	"packages": {
+	},
 	"volume": {
-		"backing": "vhd",
+		"backing": "raw",
 		"partitions": {
 			"type": "msdos",
 			"boot": {
@@ -26,10 +28,9 @@
 				"filesystem": "ext2"
 			},
 			"root": {
-				"size":       "864MiB",
+				"size":       "7GiB",
 				"filesystem": "ext4"
-			},
-			"swap": {"size": "128MiB"}
+			}
 		}
 	}
 }
