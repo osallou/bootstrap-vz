@@ -14,7 +14,10 @@
 		"bootloader":   "grub",
 		"timezone":     "UTC",
 		"locale":       "en_US",
-		"charmap":      "UTF-8"
+		"charmap":      "UTF-8",
+		"waagent": {
+			"version":  "2.0.4"
+		}
 	},
 	"packages": {
 	},
